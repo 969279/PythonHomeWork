@@ -5,7 +5,7 @@
 
 numbers = int(input('Введите трехзначное число: '))
 
-if numbers < 1000 and numbers > 99:
-    print((numbers // 100) + (numbers % 100 // 10) + (numbers % 10))
+if numbers < 1000 and numbers > 99 :
+    print('Сумма цифр числа',numbers,' - ', (numbers // 100) + (numbers % 100 // 10) + (numbers % 10))
 else:
-    print('Введено неподходящее число')
+    print('Введено неподходящее число.')

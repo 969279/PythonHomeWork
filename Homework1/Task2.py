@@ -8,10 +8,9 @@
 #24 -> 4  16  4
 #60 -> 10  40  10
 
-number = int(input('Введите число сделанных детьми журавликов: '))
+number = int(input('Введите число: '))
 
 if number % 6 == 0:
-    print(round(number // 1.5))
-    print(number // 6)
+    print(number,'->',number // 6,'_',round(number // 1.5),'_', number // 6)
 else:
-    print('Такого быть не может :-)')
+    print('Число не кратно 6')
