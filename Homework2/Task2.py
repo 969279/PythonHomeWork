@@ -7,4 +7,19 @@
 # 4 4 -> 2 2
 # 5 6 -> 2 *
 
+sum = int(input('Загадайте два числа и введите их сумму: '))
+composition = int(input('Введите произведение этих чисел: '))
+i = int(1)
+
+while i < sum:
+    number = sum - i
+    comp = number * i
+    if comp == composition:
+        print(f'Вы загадали числа: {i} и {number}')
+        break
+    i += 1
+else:
+    print('Не выполнено условие ввода данных.')
+
+
 
