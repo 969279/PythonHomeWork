@@ -20,3 +20,32 @@
 # Будем считать, что на вход подается только одно слово, которое содержит либо
 # только английские, либо только русские буквы.
 
+en_dict = {'1': 'A, E, I, O, U, L, N, S, T, R', '2': 'D, G', '3': 'B, C, M, P', '4': 'F, H, V, W, Y',
+           '5': 'K', '8': 'J, X', '10': 'Q, Z'}
+ru_dict = {'1': 'А, В, Е, И, Н, О, Р, С, Т', '2': 'Д, К, Л, М, П, У', '3': 'Б, Г, Ё, Ь, Я', '4': 'Й, Ы',
+           '5': 'Ж, З, Х, Ц, Ч', '8': 'Ш, Э, Ю', '10': 'Ф, Щ, Ъ'}
+
+user_string = input('Введите слово: ')
+conv_string = user_string.upper()
+summ = 0
+
+if 'A' <= conv_string[0] and conv_string[0] <= 'W':
+    leng_dict = en_dict.copy()
+elif 'А' <= conv_string[0] and conv_string[0] <= 'Я':
+    leng_dict = ru_dict.copy()
+else:
+    print('Слово не распознано, попробуйте еще раз.')
+
+for i in range(len(conv_string)):
+    for key, value in leng_dict.items():
+        for j in range(len(value)):
+            if value[j] == conv_string[i]:
+#               print(conv_string[i], key)
+                summ = int(key) + summ
+
+print(f'Вы получаете {summ} очков.')
+
+
+
+
+
