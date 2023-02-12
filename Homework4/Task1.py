@@ -9,16 +9,38 @@
 # 3 6 9 12 15 18
 # 6 12
 
+#list_n = [2, 13, 4, 6, 9, 8, 10, 12, 10, 8, 6, 4, 2]
+#list_m = [13, 6, 9, 12, 15, 18]
+
 n = int(input('Введите количество элементов первого множества: '))
-m = int(input('Введите количество элементов первого множества: '))
-print(n)
-print(m)
+m = int(input('Введите количество элементов второго множества: '))
 
-num_n = list()
-num_m = list()
+list_n = input('Введите числа первого множества: ').split()
+list_m = input('Введите числа второго множества: ').split()
 
-num_n = input('Введите числа первого множества: ')
-num_m = input('Введите числа второго множества: ')
+if len(list_n) < n:
+    num1 = n - len(list_n)
+    print('Введено недостаточно элементов')
+    list_n.extend(input(f'Добавтье {num1} элементов в первое множество: ').split())
+else:
+    for i in range(len(list_n) - 1, n - 1, -1):
+        list_n.pop(i)
+print(f'Первое множество{list_n}')
 
-print(num_n)
-print(num_m)
+if len(list_m) < m:
+    num2 = m - len(list_m)
+    print('Введено недостаточно элементов')
+    list_m.extend(input(f'Добавтье {num2} элементов во второе множество: ').split())
+else:
+    for j in range(len(list_m) - 1, m - 1, -1):
+        list_m.pop(j)
+print(f'Второе множество{list_m}')
+
+set_list_n = set(list_n)
+set_list_m = set(list_m)
+new_list = list(set_list_n.intersection(set_list_m))
+new_list.sort()
+print(new_list)
+
+
+

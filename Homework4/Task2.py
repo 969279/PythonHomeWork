@@ -13,8 +13,47 @@
 
 
 import random
-#bush = int(input('Введите количество кустов на грядке: '))
-#harvest = [random.randint(1, 10) for _ in range(bush)]
+bush = int(input('Введите количество кустов на грядке: '))
+harvest = [random.randint(1, 10) for _ in range(bush)]
+maxHarvest = 1
+summHarvest = 0
+numBush = ''
+print(harvest)
+
+for i in range(len(harvest)):
+    first, last = 0, 0
+    if summHarvest > maxHarvest:
+        maxHarvest = summHarvest
+        print(maxHarvest)
+    if i == 0:
+        first = len(harvest) - 1
+        last = i + 1
+    elif i == len(harvest) - 1:
+        first = i - 1
+        last = 0
+    else:
+        first = i - 1
+        last = i + 1
+
+    summHarvest = harvest[first] + harvest[i] + harvest[last]
+    numBush = [first, i, last]
+
+print(numBush)
+print(maxHarvest)
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 harvest = [1, 1, 1, 4, 1]
 #if bush < 3:
 #    print('Количество не сожет быть меньше 3.')
@@ -48,7 +87,7 @@ if rightBush > len(harvest) - 1:
 print(f'Максимальный урожай {maxHarvest} ягод при сборе с кустов №№ {leftBush}, {numberBush + 1}, {rightBush}')
 
 
-"""
+
 key = 1
 for key in range(1, bush + 1):
     harv[key] = random.randint(1, 10)
