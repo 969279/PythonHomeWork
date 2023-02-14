@@ -3,3 +3,11 @@
 # Формула для получения n-го члена прогрессии: an = a1 + (n-1) * d.
 # Каждое число вводится с новой строки.
 
+number = int(input('Введите первое число прогрессии: '))
+diff_num = int(input('Введите разность чисел прогрессии: '))
+quant_num = int(input('Введите количество чисел прогрессии: '))
+list_num = []
+
+for i in range(1, quant_num + 1):
+    list_num.append(number + (i - 1) * diff_num)
+print(list_num)
