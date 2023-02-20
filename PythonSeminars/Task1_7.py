@@ -20,15 +20,25 @@ def find_farthest_orbit (list_of_orbits):
     print(f'Орбиты планет: {list_of_planets}')
     list_of_square = list(enumerate(map(lambda x: round(math.pi * x[0] * x[1], 2), list_of_planets), 1))
     print((f'Площади орбит планет: {list_of_square}'))
-    return list_of_square
+    result = list(zip(list_of_planets, list_of_square))
+    #print(result)
+    return result
 
 list_of_square = find_farthest_orbit(list_of_orbits)
 
-max_square = (0, 0)
+max_square = list_of_square[0]
 for max in list_of_square:
-    if max_square[1] < max[1]:
+    if max_square[1][1] < max[1][1]:
         max_square = max
-print(f'Максимально удаленная планета: {max_square}')
+#print(max_square)
+#print(max_square[0])
+#print(max_square[1])
+#print(max_square[0][0])
+#print(max_square[0][1])
+#print(max_square[1][0])
+#print(max_square[1][1])
+#print(f'Максимально удаленная планета:  max_square[1][0]  с орбитой:  max_square[0]  и площадью:  max_square[1][1]')
+print(f'Максимально удаленная планета: {max_square[1][0]} с орбитой: {max_square[0]} и площадью: {max_square[1][1]}')
 
 
 
