@@ -45,8 +45,23 @@ data = '9 2 3 5 8 15 23 38'
 data = list(map(int, data.split()))
 print(data)
 
-"""
+
 data = [9, 2, 3, 5, 8, 15, 23, 38, 55]
 print(data)
 data = list(filter(lambda x: x % 10 == 5, data))
 print(data)
+
+line = "пуру-ра-рам рам-пам-папам па-ра-па-да"
+lines = line.split()
+print(lines)
+
+lst = [sum(x in 'уеыаоэяию' for x in lin) for lin in lines]
+print(lst)
+
+if len(set(lst)) == 1:
+    print(len(set(lst)))
+    res = "Парам пам-пам"
+else:
+    res = "Пам парам"
+print(res)
+"""

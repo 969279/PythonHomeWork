@@ -9,9 +9,21 @@
 # Ввод: пара-ра-рам рам-пам-папам па-ра-па-да
 # Вывод: Парам пам-пам
 
-verse = str(input('Введите текст стиха: '))
-
+verse = ('пуру-ра-рам рам-пам-папам па-ра-па-да')
+#verse = str(input('Винни, введи текст стиха: '))
+letter = ['а', 'о', 'у', 'ы', 'э', 'е', 'ё', 'и', 'ю', 'я']
+list_count = []
 verse = verse.split()
-print(verse)
+def count_letter(text):
+    count = 0
+    for i in letter:
+        count += text.count(i)
+    return count
 
-text
+for item in verse:
+    list_count.append(count_letter(item))
+print(f'{verse}\n')
+if list_count.count(list_count[0]) == len(list_count):
+    print('Парам пам-пам')
+else:
+    print('Пам парам')
