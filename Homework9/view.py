@@ -11,6 +11,13 @@ def main_menu() -> int:
     choise = int(input('Введите номер действия: '))
     return choise
 
+def save_contact(phone_book):
+    if phone_book:
+        messege = str()
+        for contact in phone_book:
+            messege += contact.get("name") + ';' + (contact.get("phone")) + ';' + contact.get("comment") + '\n'
+        return messege
+
 def show_contact(phone_book): # показать контакты №3
     if phone_book:
         for i, contact in enumerate(phone_book, 1):
@@ -43,8 +50,11 @@ def delete_contact(book: list):# Удалить контакт п.5
     show_contact(book)
     return int(input('Выберите контакт для удаления:')) - 1
 
-def good_bye():
-    print('Телефонный справочник закрыт. До свидания!')
+def good_bye(count):
+    if count == 0:
+        print('Телефонный справочник закрыт. До свидания!')
+    else:
+        print('Телефонный справочник был изменён! Требуется сохранить файл!')
 
 
 

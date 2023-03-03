@@ -10,7 +10,8 @@ def start_menu():
             case 1:  # Открыть файл
                 pb.open_file()
             case 2:  # Сохранить файл
-                pb.save_file()
+                contacts = pb.phone_book
+                pb.save_file(view.save_contact(contacts))
             case 3:  # Показать контакты
                 book = pb.get()
                 view.show_contact(book)
@@ -28,5 +29,7 @@ def start_menu():
                 index = view.delete_contact(pb.get())
                 pb.deiete(index)
             case 8: # Выход
-                view.good_bye()
-                break
+                view.good_bye(pb.out())
+                if pb.out() == 0:
+                    break
+
